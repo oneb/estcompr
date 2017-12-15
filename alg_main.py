@@ -43,9 +43,9 @@ def alg1(fh, A, eps):
     for l in range(1, l_0+1):
         # d_est corresponds to the result of ESTIMATE(l, B, 1/(3*l_0)) in the
         # paper's pseudocode
-        d_est = median([dc[l] for dc in all_dcounts])
+        d_est = median([dc[l]*B for dc in all_dcounts])
         ratios.append(d_est / l)
-        
+
     m = max(ratios)
     return m + A/B + eps*n
 
