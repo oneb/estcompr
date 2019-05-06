@@ -146,7 +146,6 @@ def read_random_slices(fh, s_len, s_count):
 
     n = os.fstat(fh.fileno()).st_size
     for (start, end) in random_slice_locs(n, s_len, s_count):
-        assert end - start == s_len 
         fh.seek(start, 0) 
         cs = fh.read(s_len)
         yield cs
